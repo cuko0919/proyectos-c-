@@ -43,6 +43,32 @@ void reporte_estadistico (double precios [3][3]){
                                
 }
 
+void MinimoMaximo (double precios [3][3]){
+    double preciomax = precios [0][0];
+    double preciomin = precios [0][0]; 
+
+    for (int i = 1; i < 2; i++)
+    {
+        for (int j = 1; j < 2; j++)
+        {
+            if (precios[3][3] > preciomax)
+        {
+            preciomax = precios[3][3];
+        }
+        if (precios[3][3] < preciomin)
+        {
+            preciomin = precios[3][3];
+        }
+        }
+        
+        
+        std::cout<<"el precio maximo es: "<<preciomax<<"\n"; 
+        std::cout<<"el precio minimo es: "<<preciomin<<"\n"; 
+        
+    }
+    
+}
+
 int main(){
     double precios [3][3] = {0}; 
     int opcion = 0;
@@ -53,7 +79,8 @@ int main(){
         std::cout<<"1 para ingresar los 9 precios de cada producto: \n"; 
         std::cout<<"2 para mostrar los precios \n";
         std::cout<<"3 para mostar las estadisticas de productos: \n";
-        std::cout<<"4 para salir \n";
+        std::cout<<"4 para mostrar el precio maximo y minimo:  \n";
+        std::cout<<"5 para salir \n";
         std::cin>>opcion;
 
         switch (opcion)
@@ -71,13 +98,17 @@ int main(){
             break;
 
             case 4: 
+            MinimoMaximo(precios);
+            break;
+
+            case 5: 
             std::cout<<"saliendo del sistema \n"; 
             break;
 
             default: 
             std::cout<<"porfavor ingrese lo que se le pide \n"; 
         }
-    } while (opcion != 4);
+    } while (opcion != 5);
     
     return 0; 
 }
