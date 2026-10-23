@@ -47,26 +47,24 @@ void MinimoMaximo (double precios [3][3]){
     double preciomax = precios [0][0];
     double preciomin = precios [0][0]; 
 
-    for (int i = 1; i < 2; i++)
+    for (int i = 1; i < 3; i++)
     {
-        for (int j = 1; j < 2; j++)
+        for (int j = 1; j < 3; j++)
         {
-            if (precios[3][3] > preciomax)
+            if (precios[i][j] > preciomax)
         {
-            preciomax = precios[3][3];
+            preciomax = precios[i][j];
         }
-        if (precios[3][3] < preciomin)
+        if (precios[i][j] < preciomin)
         {
-            preciomin = precios[3][3];
+            preciomin = precios[i][j];
         }
         }
         
-        
-        std::cout<<"el precio maximo es: "<<preciomax<<"\n"; 
-        std::cout<<"el precio minimo es: "<<preciomin<<"\n"; 
         
     }
-    
+   std::cout<<"el precio maximo es: "<<preciomax<<"\n"; 
+   std::cout<<"el precio minimo es: "<<preciomin<<"\n"; 
 }
 
 int main(){
